@@ -1,4 +1,4 @@
-#include<iostream>
+#include<iostream> //add deletion and other functions
 
 template <typename T>
 class singlyLinkedList;  //forward declaration of linked list class
@@ -18,14 +18,14 @@ class singlyLinkedList
 
             public:
                 NODE()
+                    : next{nullptr}
                 {
-                    next = nullptr;
                 }
 
                 NODE(const T& data)
+                    : data{data}
+                    , next{nullptr}
                 {
-                    this->data = data;
-                    next = nullptr;
                 }
 
         };
@@ -37,10 +37,10 @@ class singlyLinkedList
 
     public:
         singlyLinkedList()
+            : size{0}
+            , head{nullptr}
+            , tail{nullptr}
         {
-            size = 0;
-            head = nullptr;
-            tail = nullptr;
         }
 
         bool isEmpty()
